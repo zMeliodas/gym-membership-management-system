@@ -1,10 +1,14 @@
-import type { SideBarButtonTypes } from "../types/buttonTypes";
+import type { ButtonTypes } from "../types/types";
+import { Link } from "react-router-dom";
 
-const SideBarButton = ({ Icon, title }: SideBarButtonTypes) => {
+const SideBarButton = ({ Icon, title, link }: ButtonTypes) => {
   return (
-    <button className="flex items-center w-full border-l-3 border-transparent font-inter text-purple focus:border-purple gap-4 px-8 py-3 hover:bg-base-300 focus:bg-base-300 transform transition-all duration-300">
-      <Icon className="w-6 h-8" /> {title}
-    </button>
+    <Link
+      to={link}
+      className="flex items-center w-full border-l-3 text-base border-transparent font-inter text-purple focus:border-purple gap-4 px-8 py-3 hover:bg-base-300 focus:bg-base-300 transform transition-all duration-300"
+    >
+      {Icon && <Icon className="w-6 h-8" />} {title}
+    </Link>
   );
 };
 

@@ -1,32 +1,37 @@
 import { MdDashboard } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
-import { CiCalendar } from "react-icons/ci";
 import { IoMdSettings } from "react-icons/io";
-import SideBarButton from "./SidebarButton";
-import type { SideBarButtonTypes } from "../types/buttonTypes";
+import SideBarButton from "./SideBarButton";
+import type { ButtonTypes } from "../types/types";
 import { MdOutlineCardMembership } from "react-icons/md";
+import { IoCalendarClearOutline } from "react-icons/io5";
 
 const SideBar = () => {
-  const buttons: SideBarButtonTypes[] = [
+  const buttons: ButtonTypes[] = [
     {
       Icon: MdDashboard,
       title: "Dashboard",
+      link: "/",
     },
     {
       Icon: GoPeople,
       title: "Members",
+      link: "/",
     },
     {
       Icon: MdOutlineCardMembership,
-      title: "Membership Plans",
+      title: "Rates & Membership",
+      link: "/",
     },
     {
-      Icon: CiCalendar,
-      title: "Schedule",
+      Icon: IoCalendarClearOutline,
+      title: "Class Schedule",
+      link: "/schedule",
     },
     {
       Icon: IoMdSettings,
       title: "Settings",
+      link: "/",
     },
   ];
 
@@ -45,6 +50,7 @@ const SideBar = () => {
             key={button.title}
             Icon={button.Icon}
             title={button.title}
+            link={button.link}
           />
         ))}
       </div>
