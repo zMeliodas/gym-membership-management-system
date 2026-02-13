@@ -16,7 +16,7 @@ const NewMember = () => {
         className="grid w-full gap-4 mb-10 
                 grid-cols-2-[repeat(auto-fit,minmax(220px,1fr))] max-w-9xl bg-base-100 p-4 rounded-xl border-2 border-outlineColor"
       >
-        <div className="flex items-center p-4 font-poppins font-bold text-xl mt-4 mb-4 text-purple border-b-2 border-purple">
+        <div className="flex items-center p-4 font-poppins font-bold text-xl mt-4 mb-4 text-primary border-b-2 border-primary">
           <h1>PERSONAL INFORMATION</h1>
         </div>
         <form className="space-y-6">
@@ -24,7 +24,7 @@ const NewMember = () => {
             <div>
               <label
                 htmlFor="firstname"
-                className="block text-purple font-poppins text-sm font-bold mb-2 uppercase tracking-wide"
+                className="block text-primary font-poppins text-sm font-bold mb-2 uppercase tracking-wide"
               >
                 First Name *
               </label>
@@ -33,14 +33,14 @@ const NewMember = () => {
                 type="text"
                 id="firstName"
                 name="firstName"
-                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-purple focus:border-purple transition-colors"
+                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
               />
             </div>
 
             <div>
               <label
                 htmlFor="lastName"
-                className="block text-purple font-poppins text-sm font-bold mb-2 uppercase tracking-wide"
+                className="block text-primary font-poppins text-sm font-bold mb-2 uppercase tracking-wide"
               >
                 Last Name *
               </label>
@@ -49,14 +49,14 @@ const NewMember = () => {
                 type="text"
                 id="lastName"
                 name="lastName"
-                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-purple focus:border-purple transition-colors"
+                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
               />
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="block text-purple text-sm font-bold mb-2 uppercase tracking-tight"
+                className="block text-primary text-sm font-bold mb-2 uppercase tracking-tight"
               >
                 Email *
               </label>
@@ -64,7 +64,7 @@ const NewMember = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple focus:border-purple transition-colors"
+                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
                 placeholder=""
               />
             </div>
@@ -72,7 +72,7 @@ const NewMember = () => {
             <div>
               <label
                 htmlFor="mobileNum"
-                className="block text-purple font-poppins text-sm font-bold mb-2 uppercase tracking-tight"
+                className="block text-primary font-poppins text-sm font-bold mb-2 uppercase tracking-tight"
               >
                 Mobile Number *
               </label>
@@ -81,14 +81,14 @@ const NewMember = () => {
                 type="tel"
                 id="mobileNum"
                 name="mobileNum"
-                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-purple focus:border-purple transition-colors"
+                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors"
               />
             </div>
 
             <div>
               <label
                 htmlFor="martialArt"
-                className="block text-purple text-sm font-bold mb-2 uppercase tracking-tight"
+                className="block text-primary text-sm font-bold mb-2 uppercase tracking-tight"
               >
                 Martial Art *
               </label>
@@ -96,7 +96,7 @@ const NewMember = () => {
               <select
                 id="martialArt"
                 name="martialArt"
-                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-purple focus:border-purple transition-colors appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-base-200 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-colors appearance-none cursor-pointer"
                 defaultValue=""
               >
                 <option value="" disabled className="text-gray-500">
@@ -114,14 +114,14 @@ const NewMember = () => {
             <div>
               <label
                 htmlFor="currentBelt"
-                className="block text-purple text-sm font-bold mb-2 uppercase tracking-tight"
+                className="block text-primary text-sm font-bold mb-2 uppercase tracking-tight"
               >
                 Current Belt *
               </label>
               <select
                 id="currentBelt"
                 name="currentBelt"
-                className="w-full px-4 py-3 bg-base-300 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-2 focus:ring-purple focus:border-purple transition-colors appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-base-300 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors appearance-none cursor-pointer"
                 defaultValue="white"
               >
                 <option value="white">White</option>
@@ -139,14 +139,14 @@ const NewMember = () => {
           <div className="flex justify-end gap-2 mt-8">
             <button
               type="button"
-              className="px-4 py-2 border-2 border-purple text-purple rounded-md font-semibold hover:bg-base-300 hover:text-slate-900 transition-colors uppercase tracking-tight"
+              className="px-4 py-2 border-2 border-primary text-primary rounded-md font-semibold hover:bg-base-300 hover:text-slate-900 transition-colors uppercase tracking-tight"
             >
               Cancel
             </button>
 
             <button
               type="submit"
-              className="px-4 py-2 bg-base-100 text-purple border-2 rounded-md font-semibold hover:bg-base-300 transition-colors uppercase tracking-tight"
+              className="px-4 py-2 bg-base-100 text-primary border-2 rounded-md font-semibold hover:bg-base-300 transition-colors uppercase tracking-tight"
             >
               Create Member Profile
             </button>

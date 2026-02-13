@@ -4,22 +4,22 @@ const MembersTable = () => {
       <table className="w-full">
         <thead className="bg-base-100 border-b-2 border-outlineColor">
           <tr>
-            <th className="p-3 text-base font-bold text-left text-purple font-poppins">
+            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
               MEMBER NAME
             </th>
-            <th className="p-3 text-base font-bold text-left text-purple font-poppins">
+            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
               MARTIAL ART
             </th>
-            <th className="p-3 text-base font-bold text-left text-purple font-poppins">
+            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
               BELT/RANKING
             </th>
-            <th className="p-3 text-base font-bold text-left text-purple font-poppins">
+            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
               JOIN DATE
             </th>
-            <th className="p-3 text-base font-bold text-left text-purple font-poppins">
+            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
               STATUS
             </th>
-            <th className="p-3 text-base font-bold text-left text-purple font-poppins">
+            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
               ACTIONS
             </th>
           </tr>

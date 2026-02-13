@@ -64,7 +64,7 @@ const Dashboard = () => {
       </div>
 
       <div className="flex flex-col gap-6 max-w-5xl">
-        <p className="font-poppins text-purple text-xl border-l-4 border-purple pl-2 font-semibold">
+        <p className="font-poppins text-primary text-xl border-l-4 border-primary pl-2 font-semibold">
           QUICK ACTIONS
         </p>
         <div
@@ -79,7 +79,7 @@ const Dashboard = () => {
 
       <div className="flex w-full flex-col gap-6">
         <div className="flex items-center">
-          <p className="flex-1 font-poppins text-purple text-xl border-l-4 border-purple pl-2 font-semibold">
+          <p className="flex-1 font-poppins text-primary text-xl border-l-4 border-primary pl-2 font-semibold">
             RECENT MEMBERS
           </p>
 

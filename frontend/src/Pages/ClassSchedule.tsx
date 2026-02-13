@@ -20,7 +20,7 @@ const ClassSchedule = () => {
   return (
     <div className="flex flex-col bg-base-200 w-full overflow-auto p-10">
       <div className="flex flex-col">
-        <p className="font-inter text-purple text-xl border-l-4 border-purple pl-2 font-semibold tracking-tighter mb-8">
+        <p className="font-inter text-primary text-xl border-l-4 border-primary pl-2 font-semibold tracking-tighter mb-8">
           TODAY'S CLASSES - WEDNESDAY, 02-11-2026
         </p>
 

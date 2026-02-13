@@ -7,7 +7,7 @@ const Members = () => {
     <div className="flex flex-col bg-base-200 w-full overflow-auto p-10">
       <div className="flex flex-col">
         <div className="flex w-full items-center mb-8">
-          <p className="flex-1 font-inter text-purple text-xl border-l-4 border-purple pl-2 font-semibold tracking-tighter">
+          <p className="flex-1 font-inter text-primary text-xl border-l-4 border-primary pl-2 font-semibold tracking-tighter">
             ALL MEMBERS (9)
           </p>
 
