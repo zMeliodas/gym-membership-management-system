@@ -3,6 +3,7 @@ import TitleBar from "./components/TitleBar";
 import ClassSchedule from "./Pages/ClassSchedule";
 import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Members from "./Pages/Members";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/schedule" element={<ClassSchedule />} />
+            <Route path="/members" element={<Members />} />
           </Routes>
         </div>
       </main>

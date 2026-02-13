@@ -16,7 +16,7 @@ const SideBar = () => {
     {
       Icon: GoPeople,
       title: "Members",
-      link: "/",
+      link: "/members",
     },
     {
       Icon: MdOutlineCardMembership,

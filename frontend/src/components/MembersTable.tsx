@@ -1,4 +1,4 @@
-const RecentMembersTable = () => {
+const MembersTable = () => {
   return (
     <div className="overflow-hidden rounded-lg border-2 border-outlineColor">
       <table className="w-full">
@@ -51,4 +51,4 @@ const RecentMembersTable = () => {
   );
 };
 
-export default RecentMembersTable;
+export default MembersTable;

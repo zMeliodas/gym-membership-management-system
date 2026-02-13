@@ -5,7 +5,7 @@ import type { CardTypes } from "../types/types";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import QuickActionButton from "../components/QuickActionButton";
-import RecentMembersTable from "../components/RecentMembersTable";
+import MembersTable from "../components/MembersTable";
 
 const Dashboard = () => {
   const cards: CardTypes[] = [
@@ -63,7 +63,7 @@ const Dashboard = () => {
       </div>
 
       <div className="flex flex-col gap-6 max-w-5xl">
-        <p className="font-poppins text-purple text-2xl border-l-4 border-purple pl-2 font-semibold">
+        <p className="font-poppins text-purple text-xl border-l-4 border-purple pl-2 font-semibold">
           QUICK ACTIONS
         </p>
         <div
@@ -78,18 +78,18 @@ const Dashboard = () => {
 
       <div className="flex w-full flex-col gap-6">
         <div className="flex items-center">
-          <p className="flex-1 font-poppins text-purple text-2xl border-l-4 border-purple pl-2 font-semibold">
+          <p className="flex-1 font-poppins text-purple text-xl border-l-4 border-purple pl-2 font-semibold">
             RECENT MEMBERS
           </p>
 
-          <button className="font-inter text-purple text-md font-bold border-2 border-outlineColor bg-base-100 py-2 px-4 rounded-4xl hover:-translate-y-1 transform-all transition-all duration-300">
+          <button className="font-inter text-purple text-sm font-bold border-2 border-outlineColor bg-base-100 py-3 px-4 rounded-4xl hover:-translate-y-1 transform-all transition-all duration-300">
             VIEW ALL MEMBERS
           </button>
         </div>
       </div>
 
       <div className="mt-4">
-        <RecentMembersTable />
+        <MembersTable />
       </div>
     </div>
   );

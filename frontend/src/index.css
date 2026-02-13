@@ -6,9 +6,12 @@
   --color-base-200: #efeae6;
   --color-base-100: #faf7f5;
 
+  --color-buttonHoverColor: #d9d4d1;
+
   --color-outlineColor: #d0cace;
 
   --color-purple: #291334;
+  --color-purple-1: #7d6e81;
 
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
