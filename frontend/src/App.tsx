@@ -4,6 +4,7 @@ import ClassSchedule from "./Pages/ClassSchedule";
 import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Members from "./Pages/Members";
+import NewMember from "./Pages/NewMember";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/" element={<Dashboard />} />
             <Route path="/schedule" element={<ClassSchedule />} />
             <Route path="/members" element={<Members />} />
+            <Route path="/members/new" element={<NewMember />} />
           </Routes>
         </div>
       </main>

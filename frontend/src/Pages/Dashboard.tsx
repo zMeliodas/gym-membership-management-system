@@ -6,6 +6,7 @@ import { IoCalendarClearOutline } from "react-icons/io5";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import QuickActionButton from "../components/QuickActionButton";
 import MembersTable from "../components/MembersTable";
+import Button from "../components/Button";
 
 const Dashboard = () => {
   const cards: CardTypes[] = [
@@ -82,9 +83,7 @@ const Dashboard = () => {
             RECENT MEMBERS
           </p>
 
-          <button className="font-inter text-purple text-sm font-bold border-2 border-outlineColor bg-base-100 py-3 px-4 rounded-4xl hover:-translate-y-1 transform-all transition-all duration-300">
-            VIEW ALL MEMBERS
-          </button>
+          <Button link="/members" title="VIEW ALL MEMBERS" />
         </div>
       </div>
 
