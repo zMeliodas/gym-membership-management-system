@@ -1,8 +1,12 @@
+import { usePageTitle } from "../hooks/usePageTitle";
+
 const TitleBar = () => {
+  const pageTitle = usePageTitle();
+
   return (
     <div className="flex w-full h-24 items-center px-8 border-b border-outlineColor bg-base-100 z-0">
       <h1 className="flex-1 text-xl font-poppins text-primary font-bold">
-        DASHBOARD OVERVIEW
+        {pageTitle}
       </h1>
 
       <div className="flex items-center gap-4">

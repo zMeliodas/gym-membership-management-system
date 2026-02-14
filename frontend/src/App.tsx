@@ -15,13 +15,15 @@ const App = () => {
         <div className="flex flex-col w-screen bg-base-200">
           <TitleBar />
 
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/schedule" element={<ClassSchedule />} />
-            <Route path="/members" element={<Members />} />
-            <Route path="/members/new" element={<NewMember />} />
-            <Route path="/rates" element={<RatesAndMembership />} />
-          </Routes>
+          <div className="flex-1 overflow-auto">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/schedule" element={<ClassSchedule />} />
+              <Route path="/members" element={<Members />} />
+              <Route path="/members/new" element={<NewMember />} />
+              <Route path="/rates" element={<RatesAndMembership />} />
+            </Routes>
+          </div>
         </div>
       </main>
     </Router>

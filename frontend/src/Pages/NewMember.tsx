@@ -110,30 +110,6 @@ const NewMember = () => {
                 <option value="boxing">Boxing</option>
               </select>
             </div>
-
-            <div>
-              <label
-                htmlFor="currentBelt"
-                className="block text-primary text-sm font-bold mb-2 uppercase tracking-tight"
-              >
-                Current Belt *
-              </label>
-              <select
-                id="currentBelt"
-                name="currentBelt"
-                className="w-full px-4 py-3 bg-base-300 border border-outlineColor rounded-md text-black focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors appearance-none cursor-pointer"
-                defaultValue="white"
-              >
-                <option value="white">White</option>
-                <option value="yellow">Yellow</option>
-                <option value="orange">Orange</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="purple">Purple</option>
-                <option value="brown">Brown</option>
-                <option value="black">Black</option>
-              </select>
-            </div>
           </div>
 
           <div className="flex justify-end gap-2 mt-8">

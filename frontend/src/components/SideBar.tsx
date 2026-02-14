@@ -31,7 +31,7 @@ const SideBar = () => {
     {
       Icon: IoMdSettings,
       title: "Settings",
-      link: "/",
+      link: "/settings",
     },
   ];
 

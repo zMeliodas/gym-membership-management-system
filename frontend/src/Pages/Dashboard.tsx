@@ -1,9 +1,13 @@
 import StatCard from "../components/StatCard";
 import { GoPeople } from "react-icons/go";
 import { IoAddCircleOutline } from "react-icons/io5";
-import type { CardTypes } from "../types/types";
+import type { ButtonTypes, CardTypes } from "../types/types";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { FaRegCalendarCheck } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+import { MdOutlineWarning } from "react-icons/md";
+import { FaCalendarCheck } from "react-icons/fa";
+import { FaMoneyBillWave } from "react-icons/fa";
 import QuickActionButton from "../components/QuickActionButton";
 import MembersTable from "../components/MembersTable";
 import Button from "../components/Button";
@@ -16,39 +20,42 @@ const Dashboard = () => {
       value: "999",
     },
     {
-      Icon: GoPeople,
-      title: "ACTIVE MEMBERSHIP",
+      Icon: FaCheckCircle,
+      title: "ACTIVE MEMBERSHIPS",
       value: "999",
     },
     {
-      Icon: GoPeople,
-      title: "EXPIRED MEMBERSHIP",
-      value: "999",
+      Icon: MdOutlineWarning,
+      title: "EXPIRING SOON",
+      value: "15",
     },
     {
-      Icon: GoPeople,
-      title: "REVENUE",
-      value: "999",
+      Icon: FaCalendarCheck,
+      title: "TODAY'S ATTENDANCE",
+      value: "42",
     },
     {
-      Icon: GoPeople,
-      title: "REVENUE",
-      value: "999",
+      Icon: FaMoneyBillWave,
+      title: "MONTHLY REVENUE",
+      value: "₱45,000",
     },
   ];
 
-  const buttons: CardTypes[] = [
+  const buttons: ButtonTypes[] = [
     {
       Icon: IoAddCircleOutline,
       title: "Add Members",
+      link: "/members/new",
     },
     {
       Icon: IoCalendarClearOutline,
       title: "Schedule Class",
+      link: "/schedule",
     },
     {
       Icon: FaRegCalendarCheck,
       title: "Attendance",
+      link: "/schedule",
     },
   ];
 
@@ -72,7 +79,11 @@ const Dashboard = () => {
                 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]"
         >
           {buttons.map((button) => (
-            <QuickActionButton Icon={button.Icon} title={button.title} />
+            <QuickActionButton
+              link={button.link}
+              Icon={button.Icon}
+              title={button.title}
+            />
           ))}
         </div>
       </div>
