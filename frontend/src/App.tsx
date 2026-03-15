@@ -1,11 +1,10 @@
 import SideBar from "./components/SideBar";
 import TitleBar from "./components/TitleBar";
-import ClassSchedule from "./Pages/ClassSchedule";
 import Dashboard from "./Pages/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Members from "./Pages/Members";
-import NewMember from "./Pages/NewMember";
-import RatesAndMembership from "./Pages/RatesAndMembership";
+import MembershipPlans from "./Pages/MembershipPlans";
+import CheckIn from "./Pages/CheckIn";
 
 const App = () => {
   return (
@@ -18,10 +17,9 @@ const App = () => {
           <div className="flex-1 overflow-auto">
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/schedule" element={<ClassSchedule />} />
               <Route path="/members" element={<Members />} />
-              <Route path="/members/new" element={<NewMember />} />
-              <Route path="/rates" element={<RatesAndMembership />} />
+              <Route path="/plans" element={<MembershipPlans />} />
+              <Route path="/checkin" element={<CheckIn />} />
             </Routes>
           </div>
         </div>

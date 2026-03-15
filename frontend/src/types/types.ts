@@ -3,7 +3,8 @@ import type { IconType } from "react-icons";
 export interface ButtonTypes {
   Icon?: IconType;
   title?: string;
-  link: string;
+  link?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 export interface CardTypes {
@@ -23,4 +24,9 @@ export interface ScheduleTypes {
   time?: string;
   instructor?: string;
   students?: string;
+}
+
+export interface PageMeta {
+  title: string;
+  subtext?: string;
 }

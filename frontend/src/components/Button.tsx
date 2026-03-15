@@ -1,14 +1,13 @@
 import { type ButtonTypes } from "../types/types";
-import { Link } from "react-router-dom";
 
-const Button = ({ link, Icon, title }: ButtonTypes) => {
+const Button = ({ Icon, title, type }: ButtonTypes) => {
   return (
-    <Link
-      to={link}
-      className="flex items-center gap-2 font-inter text-primary text-sm font-bold border-2 border-outlineColor bg-base-100 py-3 px-4 rounded-4xl hover:-translate-y-1 transform-all transition-all duration-300"
+    <button
+      type={type ?? "button"}
+      className="flex items-center justify-center gap-2 font-inter bg-primary text-base-100 text-xs font-bold py-3 px-4 rounded-xl hover:-translate-y-0.5 hover:bg-buttonHover transition-all duration-300"
     >
-      {Icon && <Icon className="w-6 h-6" />} {title}
-    </Link>
+      {Icon && <Icon className="w-4 h-4" />} {title}
+    </button>
   );
 };
 

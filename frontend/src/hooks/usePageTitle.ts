@@ -1,24 +1,41 @@
 import { useLocation } from "react-router-dom";
+import type { PageMeta } from "../types/types";
 
 export const usePageTitle = () => {
   const location = useLocation();
 
-  const getTitleFromPath = (path: string) => {
+  const getTitleFromPath = (path: string): PageMeta => {
     switch (path) {
       case "/":
-        return "DASHBOARD OVERVIEW";
-      case "/schedule":
-        return "CLASS SCHEDULE";
+        return {
+          title: "DASHBOARD",
+          subtext: "Saturday, February 28, 2026",
+        };
+      case "/checkin":
+        return {
+          title: "Check-In",
+          subtext: "Log member visits",
+        };
       case "/members":
-        return "MEMBERS";
-      case "/members/new":
-        return "NEW MEMBER";
-      case "/rates":
-        return "RATES AND MEMBERSHIP";
-        case "/settings":
-        return "SETTINGS";
+        return {
+          title: "Members",
+          subtext: "Manage all gym memberships",
+        };
+      case "/plans":
+        return {
+          title: "MEMBERSHIP PLANS",
+          subtext: "Configure available plans",
+        };
+      case "/settings":
+        return {
+          title: "DASHBOARD",
+          subtext: "Saturday, February 28, 2026",
+        };
       default:
-        return "DASHBOARD OVERVIEW";
+        return {
+          title: "DASHBOARD",
+          subtext: "Saturday, February 28, 2026",
+        };
     }
   };
 

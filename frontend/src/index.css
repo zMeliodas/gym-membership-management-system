@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -8,10 +8,13 @@
 
   --color-outlineColor: #d0cace;
 
-  --color-primary: #291334;
+  --color-primary: #181A18;
   --color-secondary: #19181f;
-  --color-description: #4b4a49;
+  --color-subtext: #4b4a49;
 
-  --font-poppins: "Poppins", sans-serif;
-  --font-inter: "Inter", sans-serif;
+  --color-buttonHover: #333333;
+
+  --font-display: "Bebas Neue", cursive;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
 }

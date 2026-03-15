@@ -1,52 +1,137 @@
 const MembersTable = () => {
+  const members = [
+    {
+      name: "Marcus Reyes",
+      email: "marcus.r@gmail.com",
+      plan: "Gold",
+      status: "active",
+      expiry: "2026-04-09",
+      phone: "09171234001",
+    },
+    {
+      name: "Lena Santos",
+      email: "lena.s@gmail.com",
+      plan: "Silver",
+      status: "active",
+      expiry: "2026-03-20",
+      phone: "09181234002",
+    },
+    {
+      name: "Jude Villanueva",
+      email: "jude.v@gmail.com",
+      plan: "Basic",
+      status: "expired",
+      expiry: "2026-03-12",
+      phone: "09191234003",
+    },
+  ];
+
+  function getInitials(name: string) {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase();
+  }
+
+  function statusColor(status: string) {
+    if (status === "active") return "bg-green-200 text-green-700";
+    if (status === "expired") return "bg-red-200 text-red-700";
+    if (status === "frozen") return "bg-blue-200 text-blue-700";
+    return "bg-gray-200";
+  }
+
+  function planColor(plan: string) {
+    if (plan === "Gold") return "bg-yellow-200";
+    if (plan === "Silver") return "bg-gray-200";
+    return "bg-gray-100";
+  }
+
   return (
-    <div className="overflow-hidden rounded-lg border-2 border-outlineColor">
-      <table className="w-full">
-        <thead className="bg-base-100 border-b-2 border-outlineColor">
-          <tr>
-            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
-              MEMBER NAME
-            </th>
-            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
-              MARTIAL ART
-            </th>
-            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
-              BELT/RANKING
-            </th>
-            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
-              JOIN DATE
-            </th>
-            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
-              STATUS
-            </th>
-            <th className="p-3 text-base font-bold text-left text-primary font-poppins">
-              ACTIONS
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="bg-white">
-            <td className="text-left p-4 font-inter text-md">Miles Magbanua</td>
-            <td className="text-left p-4 font-inter text-md">
-              Brazilian Jiu-Jitsu
-            </td>
-            <td className="text-left p-4 font-inter text-md">Black Belt</td>
-            <td className="text-left p-4 font-inter text-md">01/01/2026</td>
-            <td className="text-left p-4 font-inter text-md">Active</td>
-            <td className="text-left p-4 font-inter text-md">Edit View</td>
-          </tr>
-          <tr className="bg-gray-100">
-            <td className="text-left p-4 font-inter text-md">
-              Nelvon Tamparong
-            </td>
-            <td className="text-left p-4 font-inter text-md">Taekwondo</td>
-            <td className="text-left p-4 font-inter text-md">Red Belt</td>
-            <td className="text-left p-4 font-inter text-md">02/01/2026</td>
-            <td className="text-left p-4 font-inter text-md">Inactive</td>
-            <td className="text-left p-4 font-inter text-md">Edit View</td>
-          </tr>
-        </tbody>
-      </table>
+    <div className="border border-outlineColor rounded-xl">
+      {/* Filters */}
+      <div className="flex gap-4 p-4 bg-base-100 rounded-xl">
+        <input
+          placeholder="Search members..."
+          className="border border-outlineColor rounded-xl px-3 py-2"
+        />
+
+        <select className="border border-outlineColor rounded-xl px-3 py-2 cursor-pointer">
+          <option>All Status</option>
+        </select>
+
+        <select className="border border-outlineColor rounded-xl px-3 py-2 cursor-pointer">
+          <option>All Plans</option>
+        </select>
+      </div>
+
+      {/* Table */}
+      <div className="bg-base-100 overflow-hidden border-y rounded-b-xl border-outlineColor">
+        {/* Header */}
+        <div className="grid grid-cols-6 p-3 bg-base-300 text-sm font-semibold">
+          <div className="text-subtext">MEMBER</div>
+          <div className="text-subtext">PLAN</div>
+          <div className="text-subtext">STATUS</div>
+          <div className="text-subtext">EXPIRY</div>
+          <div className="text-subtext">PHONE</div>
+          <div className="text-subtext">ACTIONS</div>
+        </div>
+
+        {/* Rows */}
+        {members.map((m, i) => (
+          <div
+            key={i}
+            className="grid grid-cols-6 p-3 items-center border-t border-outlineColor"
+          >
+            {/* MEMBER */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center">
+                {getInitials(m.name)}
+              </div>
+
+              <div>
+                <div>{m.name}</div>
+                <div className="text-sm text-gray-500">{m.email}</div>
+              </div>
+            </div>
+
+            {/* PLAN */}
+            <div>
+              <span
+                className={`px-2 py-1 rounded text-sm ${planColor(m.plan)}`}
+              >
+                {m.plan}
+              </span>
+            </div>
+
+            {/* STATUS */}
+            <div>
+              <span
+                className={`px-2 py-1 rounded-full text-sm ${statusColor(
+                  m.status,
+                )}`}
+              >
+                {m.status}
+              </span>
+            </div>
+
+            {/* EXPIRY */}
+            <div>{m.expiry}</div>
+
+            {/* PHONE */}
+            <div>{m.phone}</div>
+
+            {/* ACTIONS */}
+            <div className="flex gap-2">
+              <button className="border px-3 py-1 rounded">Edit</button>
+
+              <button className="border px-3 py-1 rounded text-red-500">
+                Del
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
