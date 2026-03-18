@@ -63,3 +63,23 @@ export interface PageMeta {
   title: string;
   subtext: string;
 }
+
+export interface PlanRevenue {
+  label: "Gold" | "Silver" | "Basic";
+  amount: number;
+  color: string;
+};
+
+export interface SummaryData {
+  monthlyRevenue: number;
+  activeMembers: number;
+  avgRevenue: number;
+  expired: number;
+};
+
+export interface RevenueBarProps {
+  label: "Gold" | "Silver" | "Basic";
+  amount: number;
+  max: number;
+  color: string;
+};

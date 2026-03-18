@@ -9,31 +9,35 @@ interface Plan {
   name: string;
   price: number;
   description: string;
+  features: string[];
 }
 
 const DEFAULT_PLANS: Plan[] = [
-  { name: "Gold", price: 3500, description: "All Access + Personal Training" },
-  { name: "Silver", price: 2000, description: "Full Gym Access + Classes" },
-  { name: "Basic", price: 1000, description: "Gym Floor Access Only" },
+  {
+    name: "Gold", price: 3500, description: "All Access + Personal Training",
+    features: ["Gym Floor Access", "Group Classes (unlimited)", "Personal Training (4 sessions/mo)", "Locker Room & Towel Service", "Sauna & Recovery Zone", "Nutrition Consultation", "Guest Pass (2/mo)", "24/7 Access"],
+  },
+  {
+    name: "Silver", price: 2000, description: "Full Gym Access + Classes",
+    features: ["Gym Floor Access", "Group Classes (unlimited)", "Locker Room & Towel Service"],
+  },
+  {
+    name: "Basic", price: 1000, description: "Gym Floor Access Only",
+    features: ["Gym Floor Access"],
+  },
 ];
 
 const PLAN_BADGE: Record<string, string> = {
-  Gold: "bg-amber-100 text-amber-800",
+  Gold:   "bg-amber-100 text-amber-800",
   Silver: "bg-neutral-200 text-neutral-600",
-  Basic: "bg-stone-100 text-stone-500",
+  Basic:  "bg-stone-100 text-stone-500",
 };
 
 // ---------------------------------------------------------------------------
 // Sub-components
 // ---------------------------------------------------------------------------
 
-function SectionHeader({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
+function SectionHeader({ title, description }: { title: string; description: string }) {
   return (
     <div className="mb-6">
       <h2 className="font-display text-3xl text-primary">{title}</h2>
@@ -54,10 +58,7 @@ function Label({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Input({
-  className = "",
-  ...props
-}: React.InputHTMLAttributes<HTMLInputElement>) {
+function Input({ className = "", ...props }: React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input
       className={`w-full border border-outlineColor rounded-xl py-3 px-4 bg-base-100 text-sm text-primary outline-none focus:border-primary transition placeholder:text-subtext ${className}`}
@@ -66,13 +67,7 @@ function Input({
   );
 }
 
-function SaveButton({
-  onClick,
-  saved,
-}: {
-  onClick: () => void;
-  saved: boolean;
-}) {
+function SaveButton({ onClick, saved }: { onClick: () => void; saved: boolean }) {
   return (
     <button
       onClick={onClick}
@@ -92,16 +87,16 @@ function SaveButton({
 // ---------------------------------------------------------------------------
 
 function AccountSection() {
-  const [email, setEmail] = useState("admin@gymsync.com");
+  const [email, setEmail]           = useState("admin@gymsync.com");
   const [currentPass, setCurrentPass] = useState("");
-  const [newPass, setNewPass] = useState("");
+  const [newPass, setNewPass]       = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [showCurrent, setShowCurrent] = useState(false);
-  const [showNew, setShowNew] = useState(false);
+  const [showNew, setShowNew]       = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [emailSaved, setEmailSaved] = useState(false);
-  const [passSaved, setPassSaved] = useState(false);
-  const [passError, setPassError] = useState("");
+  const [passSaved, setPassSaved]   = useState(false);
+  const [passError, setPassError]   = useState("");
 
   function handleSaveEmail() {
     setEmailSaved(true);
@@ -110,21 +105,16 @@ function AccountSection() {
 
   function handleSavePassword() {
     if (!currentPass || !newPass || !confirmPass) {
-      setPassError("All password fields are required.");
-      return;
+      setPassError("All password fields are required."); return;
     }
     if (newPass !== confirmPass) {
-      setPassError("New passwords do not match.");
-      return;
+      setPassError("New passwords do not match."); return;
     }
     if (newPass.length < 8) {
-      setPassError("Password must be at least 8 characters.");
-      return;
+      setPassError("Password must be at least 8 characters."); return;
     }
     setPassError("");
-    setCurrentPass("");
-    setNewPass("");
-    setConfirmPass("");
+    setCurrentPass(""); setNewPass(""); setConfirmPass("");
     setPassSaved(true);
     setTimeout(() => setPassSaved(false), 2000);
   }
@@ -143,7 +133,7 @@ function AccountSection() {
           <Input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             placeholder="admin@gymsync.com"
           />
         </div>
@@ -154,44 +144,21 @@ function AccountSection() {
 
       {/* Password */}
       <div className="w-full mt-8">
-        <p className="text-subtext font-mono tracking-widest text-xs mb-4">
-          CHANGE PASSWORD
-        </p>
+        <p className="text-subtext font-mono tracking-widest text-xs mb-4">CHANGE PASSWORD</p>
 
         <div className="flex flex-col gap-3">
           {[
-            {
-              label: "CURRENT PASSWORD",
-              value: currentPass,
-              set: setCurrentPass,
-              show: showCurrent,
-              toggle: () => setShowCurrent((p) => !p),
-            },
-            {
-              label: "NEW PASSWORD",
-              value: newPass,
-              set: setNewPass,
-              show: showNew,
-              toggle: () => setShowNew((p) => !p),
-            },
-            {
-              label: "CONFIRM PASSWORD",
-              value: confirmPass,
-              set: setConfirmPass,
-              show: showConfirm,
-              toggle: () => setShowConfirm((p) => !p),
-            },
-          ].map((field) => (
+            { label: "CURRENT PASSWORD", value: currentPass, set: setCurrentPass, show: showCurrent, toggle: () => setShowCurrent(p => !p) },
+            { label: "NEW PASSWORD",     value: newPass,     set: setNewPass,     show: showNew,     toggle: () => setShowNew(p => !p) },
+            { label: "CONFIRM PASSWORD", value: confirmPass, set: setConfirmPass, show: showConfirm, toggle: () => setShowConfirm(p => !p) },
+          ].map(field => (
             <div key={field.label}>
               <Label>{field.label}</Label>
               <div className="relative">
                 <Input
                   type={field.show ? "text" : "password"}
                   value={field.value}
-                  onChange={(e) => {
-                    field.set(e.target.value);
-                    setPassError("");
-                  }}
+                  onChange={e => { field.set(e.target.value); setPassError(""); }}
                   placeholder="••••••••"
                   className="pr-11"
                 />
@@ -229,14 +196,33 @@ function PlansSection() {
   const [plans, setPlans] = useState<Plan[]>(DEFAULT_PLANS);
   const [saved, setSaved] = useState(false);
 
-  function updatePlan(
-    index: number,
-    field: keyof Plan,
-    value: string | number,
-  ) {
-    setPlans((prev) =>
-      prev.map((p, i) => (i === index ? { ...p, [field]: value } : p)),
-    );
+  function updatePlan(index: number, field: keyof Plan, value: string | number) {
+    setPlans(prev => prev.map((p, i) => i === index ? { ...p, [field]: value } : p));
+    setSaved(false);
+  }
+
+  function updateFeature(planIndex: number, featIndex: number, value: string) {
+    setPlans(prev => prev.map((p, i) => {
+      if (i !== planIndex) return p;
+      const features = [...p.features];
+      features[featIndex] = value;
+      return { ...p, features };
+    }));
+    setSaved(false);
+  }
+
+  function addFeature(planIndex: number) {
+    setPlans(prev => prev.map((p, i) =>
+      i === planIndex ? { ...p, features: [...p.features, ""] } : p
+    ));
+    setSaved(false);
+  }
+
+  function removeFeature(planIndex: number, featIndex: number) {
+    setPlans(prev => prev.map((p, i) => {
+      if (i !== planIndex) return p;
+      return { ...p, features: p.features.filter((_, fi) => fi !== featIndex) };
+    }));
     setSaved(false);
   }
 
@@ -249,32 +235,28 @@ function PlansSection() {
     <div>
       <SectionHeader
         title="MEMBERSHIP PLANS"
-        description="Edit plan pricing and descriptions."
+        description="Edit plan pricing, descriptions and features."
       />
 
       <div className="flex flex-col gap-4 w-full">
         {plans.map((plan, i) => (
-          <div
-            key={plan.name}
-            className="bg-base-100 border border-outlineColor rounded-xl p-5"
-          >
+          <div key={plan.name} className="bg-base-100 border border-outlineColor rounded-xl p-5">
+
+            {/* Plan badge */}
             <div className="flex items-center gap-2 mb-4">
-              <span
-                className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium font-mono ${PLAN_BADGE[plan.name]}`}
-              >
+              <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium font-mono ${PLAN_BADGE[plan.name]}`}>
                 {plan.name}
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            {/* Price + Description */}
+            <div className="grid grid-cols-2 gap-3 mb-5">
               <div>
                 <Label>MONTHLY PRICE (₱)</Label>
                 <Input
                   type="number"
                   value={plan.price}
-                  onChange={(e) =>
-                    updatePlan(i, "price", Number(e.target.value))
-                  }
+                  onChange={e => updatePlan(i, "price", Number(e.target.value))}
                   min={0}
                 />
               </div>
@@ -283,9 +265,50 @@ function PlansSection() {
                 <Input
                   type="text"
                   value={plan.description}
-                  onChange={(e) => updatePlan(i, "description", e.target.value)}
+                  onChange={e => updatePlan(i, "description", e.target.value)}
                   placeholder="Short description..."
                 />
+              </div>
+            </div>
+
+            {/* Features */}
+            <div className="border-t border-outlineColor pt-4">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-subtext font-mono tracking-widest text-xs">FEATURES</p>
+                <button
+                  type="button"
+                  onClick={() => addFeature(i)}
+                  className="text-xs font-medium text-subtext hover:text-primary border border-outlineColor hover:border-primary rounded-lg px-3 py-1.5 transition"
+                >
+                  + Add Feature
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                {plan.features.map((feat, fi) => (
+                  <div key={fi} className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded flex items-center justify-center bg-green-100 shrink-0">
+                      <span className="text-green-700 text-[10px]">✓</span>
+                    </div>
+                    <input
+                      className="flex-1 border border-outlineColor rounded-lg py-2 px-3 bg-base-200 text-sm text-primary outline-none focus:border-primary transition placeholder:text-subtext"
+                      value={feat}
+                      onChange={e => updateFeature(i, fi, e.target.value)}
+                      placeholder="Feature name..."
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removeFeature(i, fi)}
+                      className="text-subtext hover:text-red-600 transition text-xs w-7 h-7 flex items-center justify-center rounded-lg hover:bg-red-50 border border-transparent hover:border-red-200 shrink-0"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                ))}
+
+                {plan.features.length === 0 && (
+                  <p className="text-xs text-subtext py-2">No features added yet.</p>
+                )}
               </div>
             </div>
           </div>
@@ -317,9 +340,7 @@ function LogoutSection({ onLogout }: { onLogout: () => void }) {
         <div className="flex items-start justify-between">
           <div>
             <p className="text-sm font-medium text-primary">Sign out</p>
-            <p className="text-xs text-subtext mt-0.5">
-              You will be redirected to the login page.
-            </p>
+            <p className="text-xs text-subtext mt-0.5">You will be redirected to the login page.</p>
           </div>
           {!confirm ? (
             <button

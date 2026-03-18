@@ -2,7 +2,6 @@
 @import "tailwindcss";
 @variant dark (&:is(.dark *));
 
-
 @theme {
   --color-base-300: #e7e2df;
   --color-base-200: #efeae6;
@@ -10,14 +9,17 @@
 
   --color-outlineColor: #d0cace;
 
-  --color-primary: #181A18;
+  --color-primary: #181a18;
   --color-secondary: #19181f;
   --color-subtext: #4b4a49;
 
   --color-buttonHover: #333333;
 
-  --color-gold: #ffdc04;
-  --color-silver: #aaaaaa;
+  --color-gold: #8a6000;
+  --color-gold2: #fef3cd;
+  --color-silver: #585858;
+  --color-silver2: #efefef;
+  --color-basic: #f0f0eb;
 
   --font-display: "Bebas Neue", cursive;
   --font-sans: "DM Sans", sans-serif;
@@ -35,15 +37,21 @@
   --color-secondary: #e0ddd9;
   --color-subtext: #9a9894;
 
+  --color-gold: #ffdc04;
+  --color-gold2: #312a19;
+  --color-silver: #c0c0c0;
+  --color-silver2: #28282b;
+  --color-basic: #1e1e22;
+
   --color-buttonHover: #bdbbb9;
 }
 
 .custom-scroll::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {

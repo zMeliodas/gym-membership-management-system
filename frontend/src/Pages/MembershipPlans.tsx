@@ -67,6 +67,7 @@ const MembershipPlans = () => {
       >
         {plans.map((plan) => (
           <PlanCard
+            key={plan.tier}
             tier={plan.tier}
             price={plan.price}
             active={plan.active}

@@ -26,6 +26,11 @@ export const usePageTitle = () => {
           title: "MEMBERSHIP PLANS",
           subtext: "Configure available plans",
         };
+        case "/revenue":
+        return {
+          title: "REVENUE",
+          subtext: "Monthly earnings overview",
+        };
       case "/settings":
         return {
           title: "Settings",

@@ -42,8 +42,8 @@ const MembersTable = () => {
   }
 
   function planColor(plan: string) {
-    if (plan === "Gold") return "bg-gold";
-    if (plan === "Silver") return "bg-silver";
+    if (plan === "Gold") return "text-gold bg-gold2";
+    if (plan === "Silver") return "text-silver bg-silver2";
     return "bg-gray-100";
   }
 
@@ -85,7 +85,7 @@ const MembersTable = () => {
           >
             {/* MEMBER */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-primary text-base-100 rounded-lg flex items-center justify-center">
                 {getInitials(m.name)}
               </div>
 
@@ -98,7 +98,7 @@ const MembersTable = () => {
             {/* PLAN */}
             <div>
               <span
-                className={`px-2 py-1 rounded text-sm ${planColor(m.plan)}`}
+                className={`px-2 py-1 rounded text-sm font-semibold ${planColor(m.plan)}`}
               >
                 {m.plan}
               </span>
@@ -123,9 +123,9 @@ const MembersTable = () => {
 
             {/* ACTIONS */}
             <div className="flex gap-2">
-              <button className="border px-3 py-1 rounded border-outlineColor text-primary">Edit</button>
+              <button className="border px-3 py-1 rounded-xl border-outlineColor text-primary">Edit</button>
 
-              <button className="border px-3 py-1 rounded text-red-500">
+              <button className="border px-3 py-1 rounded-xl text-red-500">
                 Del
               </button>
             </div>

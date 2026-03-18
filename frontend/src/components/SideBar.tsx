@@ -5,6 +5,7 @@ import SideBarButton from "./SideBarButton";
 import type { ButtonProps } from "../types/types";
 import { MdOutlineCardMembership } from "react-icons/md";
 import { FaRegCalendarCheck } from "react-icons/fa6";
+import { IoStatsChart } from "react-icons/io5";
 import ThemeToggle from "./ThemeToggle";
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,11 @@ const SideBar = () => {
       link: "/plans",
     },
     {
+      Icon: IoStatsChart,
+      title: "Revenue",
+      link: "/revenue",
+    },
+    {
       Icon: IoMdSettings,
       title: "Settings",
       link: "/settings",
@@ -40,7 +46,10 @@ const SideBar = () => {
   return (
     <div className="flex flex-col h-full max-w-64 w-full bg-componentBgColor outline-1 outline-outlineColor z-10 justify-between">
       <div className="flex flex-col px-6 py-6 border-b border-outlineColor bg-base-100 gap-1">
-        <Link to={"/"} className="text-primary font-display text-4xl font-bold tracking-wider cursor-pointer">
+        <Link
+          to={"/"}
+          className="text-primary font-display text-4xl font-bold tracking-wider cursor-pointer"
+        >
           GymSync
         </Link>
         <p className="text-subtext font-mono text-sm tracking-widest">

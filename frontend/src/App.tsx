@@ -8,29 +8,7 @@ import CheckIn from "./Pages/CheckIn";
 import AddMemberModal from "./components/modals/AddMember";
 import LoginPage from "./Pages/Auth/Login";
 import Settings from "./Pages/Settings";
-
-// const App = () => {
-//   return (
-//     <Router>
-//       <main className="flex w-screen h-screen bg-base-300">
-//         <SideBar />
-//         <div className="flex flex-col w-screen bg-base-200">
-//           <TitleBar />
-
-//           <div className="flex-1 overflow-auto">
-//             <Routes>
-//               <Route path="/" element={<Dashboard />} />
-//               <Route path="/members" element={<Members />} />
-//               <Route path="/plans" element={<MembershipPlans />} />
-//               <Route path="/checkin" element={<CheckIn />} />
-//             </Routes>
-//           </div>
-//         </div>
-//       </main>
-//       <AddMemberModal onSubmit={(data) => console.log(data)} />
-//     </Router>
-//   );
-// };
+import Revenue from "./Pages/Revenue";
 
 const App = () => {
   return (
@@ -54,6 +32,7 @@ const App = () => {
                     <Route path="/plans" element={<MembershipPlans />} />
                     <Route path="/checkin" element={<CheckIn />} />
                     <Route path="/settings" element={<Settings />} />
+                    <Route path="/revenue" element={<Revenue />} />
                   </Routes>
                 </div>
               </div>
