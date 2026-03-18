@@ -1,7 +1,7 @@
-import type { ButtonTypes } from "../types/types";
+import type { ButtonProps } from "../types/types";
 import { Link, useLocation } from "react-router-dom";
 
-const SideBarButton = ({ Icon, title, link }: ButtonTypes) => {
+const SideBarButton = ({ Icon, title, link }: ButtonProps) => {
   const location = useLocation();
   const isActive = location.pathname === link;
 

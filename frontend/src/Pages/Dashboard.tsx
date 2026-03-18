@@ -1,6 +1,6 @@
 import StatCard from "../components/StatCard";
 import { GoPeople } from "react-icons/go";
-import type { CardTypes } from "../types/types";
+import type { StatCardProps } from "../types/types";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdOutlineWarning } from "react-icons/md";
 import { FaCalendarCheck } from "react-icons/fa";
@@ -8,7 +8,7 @@ import RecentActivity from "../components/RecentActivity";
 import ExpiringThisWeek from "../components/ExpiringThisWeek";
 
 const Dashboard = () => {
-  const cards: CardTypes[] = [
+  const cards: StatCardProps[] = [
     {
       Icon: GoPeople,
       title: "TOTAL MEMBERS",

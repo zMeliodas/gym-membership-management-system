@@ -1,6 +1,6 @@
-import type { CardTypes } from "../types/types";
+import type { StatCardProps } from "../types/types";
 
-const StatCard = ({ title, Icon, value }: CardTypes) => {
+const StatCard = ({ title, Icon, value }: StatCardProps) => {
   return (
     <div className="group relative flex flex-col w-full h-full min-h-40 p-6 border bg-base-100 border-outlineColor rounded-xl shadow-sm hover:shadow-lg transform transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 cursor-pointer select-none overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

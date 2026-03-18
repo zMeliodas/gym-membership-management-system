@@ -2,12 +2,12 @@ import { MdDashboard } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { IoMdSettings } from "react-icons/io";
 import SideBarButton from "./SideBarButton";
-import type { ButtonTypes } from "../types/types";
+import type { ButtonProps } from "../types/types";
 import { MdOutlineCardMembership } from "react-icons/md";
 import { FaRegCalendarCheck } from "react-icons/fa6";
 
 const SideBar = () => {
-  const buttons: ButtonTypes[] = [
+  const buttons: ButtonProps[] = [
     {
       Icon: MdDashboard,
       title: "Dashboard",

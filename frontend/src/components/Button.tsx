@@ -1,6 +1,6 @@
-import { type ButtonTypes } from "../types/types";
+import { type ButtonProps } from "../types/types";
 
-const Button = ({ Icon, title, type }: ButtonTypes) => {
+const Button = ({ Icon, title, type }: ButtonProps) => {
   return (
     <button
       type={type ?? "button"}
