@@ -30,7 +30,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="font-display text-3xl">ADD MEMBER</h2>
+          <h2 className="font-display text-3xl text-primary">ADD MEMBER</h2>
           <button
             onClick={closeAddMember}
             className="w-8 h-8 flex items-center justify-center rounded-lg border border-outlineColor text-subtext hover:border-primary hover:text-primary transition text-sm"
@@ -47,7 +47,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
             <div className="flex flex-col gap-1">
               <label className="text-subtext font-mono tracking-widest text-xs">FIRST NAME</label>
               <input
-                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm outline-none focus:border-primary transition"
+                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm text-primary outline-none focus:border-primary transition"
                 value={fn}
                 onChange={e => setFn(e.target.value)}
               />
@@ -55,7 +55,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
             <div className="flex flex-col gap-1">
               <label className="text-subtext font-mono tracking-widest text-xs">LAST NAME</label>
               <input
-                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm outline-none focus:border-primary transition"
+                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm text-primary outline-none focus:border-primary transition"
                 value={ln}
                 onChange={e => setLn(e.target.value)}
               />
@@ -67,7 +67,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
             <label className="text-subtext font-mono tracking-widest text-xs">EMAIL</label>
             <input
               type="email"
-              className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm outline-none focus:border-primary transition"
+              className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm text-primary outline-none focus:border-primary transition"
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
@@ -78,7 +78,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
             <label className="text-subtext font-mono tracking-widest text-xs">PHONE</label>
             <input
               type="tel"
-              className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm outline-none focus:border-primary transition"
+              className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm text-primary outline-none focus:border-primary transition"
               value={phone}
               onChange={e => setPhone(e.target.value)}
             />
@@ -89,7 +89,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
             <div className="flex flex-col gap-1">
               <label className="text-subtext font-mono tracking-widest text-xs">PLAN</label>
               <select
-                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm outline-none focus:border-primary transition"
+                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm text-primary outline-none focus:border-primary transition"
                 value={plan}
                 onChange={e => setPlan(e.target.value)}
               >
@@ -102,7 +102,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
               <label className="text-subtext font-mono tracking-widest text-xs">START DATE</label>
               <input
                 type="date"
-                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm outline-none focus:border-primary transition"
+                className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm text-primary outline-none focus:border-primary transition"
                 value={startDate}
                 onChange={e => setStartDate(e.target.value)}
               />
@@ -113,7 +113,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
           <div className="flex flex-col gap-1">
             <label className="text-subtext font-mono tracking-widest text-xs">DURATION (MONTHS)</label>
             <select
-              className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm outline-none focus:border-primary transition"
+              className="border border-outlineColor rounded-xl py-3 px-4 bg-base-300 text-sm text-primary outline-none focus:border-primary transition"
               value={duration}
               onChange={e => setDuration(e.target.value)}
             >
@@ -138,7 +138,7 @@ const AddMemberModal = ({ onSubmit }: AddMemberModalProps) => {
           </button>
           <button
             onClick={handleSubmit}
-            className="px-5 py-2.5 rounded-xl bg-neutral-900 text-white text-sm font-medium hover:bg-neutral-700 transition"
+            className="px-5 py-2.5 rounded-xl bg-primary text-base-100 text-sm font-medium hover:bg-white/60 transition"
           >
             Add Member
           </button>

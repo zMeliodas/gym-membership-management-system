@@ -42,25 +42,25 @@ const MembersTable = () => {
   }
 
   function planColor(plan: string) {
-    if (plan === "Gold") return "bg-yellow-200";
-    if (plan === "Silver") return "bg-gray-200";
+    if (plan === "Gold") return "bg-gold";
+    if (plan === "Silver") return "bg-silver";
     return "bg-gray-100";
   }
 
   return (
     <div className="border border-outlineColor rounded-xl">
       {/* Filters */}
-      <div className="flex gap-4 p-4 bg-base-100 rounded-xl">
+      <div className="flex gap-4 p-4 bg-base-100 rounded-xl text-primary">
         <input
           placeholder="Search members..."
-          className="border border-outlineColor rounded-xl px-3 py-2"
+          className="border border-outlineColor rounded-xl px-3 py-2 text-primary"
         />
 
-        <select className="border border-outlineColor rounded-xl px-3 py-2 cursor-pointer">
+        <select className="border border-outlineColor rounded-xl px-3 py-2 cursor-pointer text-primary">
           <option>All Status</option>
         </select>
 
-        <select className="border border-outlineColor rounded-xl px-3 py-2 cursor-pointer">
+        <select className="border border-outlineColor rounded-xl px-3 py-2 cursor-pointer text-primary">
           <option>All Plans</option>
         </select>
       </div>
@@ -90,8 +90,8 @@ const MembersTable = () => {
               </div>
 
               <div>
-                <div>{m.name}</div>
-                <div className="text-sm text-gray-500">{m.email}</div>
+                <div className="text-primary">{m.name}</div>
+                <div className="text-sm text-subtext">{m.email}</div>
               </div>
             </div>
 
@@ -116,14 +116,14 @@ const MembersTable = () => {
             </div>
 
             {/* EXPIRY */}
-            <div>{m.expiry}</div>
+            <div className="font-sans text-primary">{m.expiry}</div>
 
             {/* PHONE */}
-            <div>{m.phone}</div>
+            <div className="font-sans text-primary">{m.phone}</div>
 
             {/* ACTIONS */}
             <div className="flex gap-2">
-              <button className="border px-3 py-1 rounded">Edit</button>
+              <button className="border px-3 py-1 rounded border-outlineColor text-primary">Edit</button>
 
               <button className="border px-3 py-1 rounded text-red-500">
                 Del

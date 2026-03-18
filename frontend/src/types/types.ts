@@ -56,3 +56,5 @@ export interface AddMemberData {
 export interface AddMemberModalProps {
   onSubmit: (data: AddMemberData) => void;
 }
+
+export type Theme = "light" | "dark";

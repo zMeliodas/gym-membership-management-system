@@ -31,7 +31,7 @@ const RecentActivity = () => {
             <div className="flex items-center gap-3">
               <div className={`w-2 h-2 rounded-full ${activity.color}`} />
 
-              <span>{activity.text}</span>
+              <span className="text-primary font-sans">{activity.text}</span>
             </div>
 
             <span className="text-gray-400 text-sm">{activity.time}</span>

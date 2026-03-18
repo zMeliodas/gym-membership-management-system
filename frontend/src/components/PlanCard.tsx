@@ -1,15 +1,9 @@
 import type { PlanCardProps } from "../types/types";
 
-const tierBorderHover: Record<"Basic" | "Silver" | "Gold", string> = {
-  Basic: "hover:border-primary",
-  Silver: "hover:border-silver",
-  Gold: "hover:border-gold",
-};
-
-const tierTextColor: Record<"Basic" | "Silver" | "Gold", string> = {
-  Basic: "text-primary",
-  Silver: "text-silver",
-  Gold: "text-gold",
+const tierColor: Record<"Basic" | "Silver" | "Gold", string> = {
+  Basic: "white/90",
+  Silver: "silver",
+  Gold: "gold",
 };
 
 const PlanCard = ({
@@ -27,12 +21,12 @@ const PlanCard = ({
 
   return (
     <div
-      className={`w-full max-w-xl bg-base-100 border border-outlineColor rounded-2xl p-6 flex flex-col gap-6 ${tierBorderHover[tier]} hover:-translate-y-1 hover:shadow-xl transform transition-all duration-300`}
+      className={`w-full max-w-xl bg-base-100 border border-outlineColor rounded-2xl p-6 flex flex-col gap-6 hover:border-${tierColor[tier]} hover:-translate-y-1 hover:shadow-xl transform transition-all duration-300`}
     >
       {/* Header */}
       <div className="flex justify-between items-start">
         <span
-          className={`bg-base-200 ${tierTextColor[tier]} font-semibold px-3 py-1 rounded-md font-mono`}
+          className={`bg-${tierColor[tier]} ${tier === "Basic" && "text-primary"} font-semibold px-3 py-1 rounded-md font-mono`}
         >
           {tier}
         </span>
@@ -47,7 +41,9 @@ const PlanCard = ({
 
       {/* Price */}
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-bold">₱{price.toLocaleString()}</h1>
+        <h1 className="text-4xl font-bold text-primary">
+          ₱{price.toLocaleString()}
+        </h1>
         <p className="text-subtext text-sm">/ month</p>
       </div>
 
@@ -63,7 +59,7 @@ const PlanCard = ({
 
         <div className="flex-1 bg-base-200 rounded-xl p-4">
           <p className="text-xs tracking-widest text-subtext">REVENUE</p>
-          <h2 className={`text-xl font-bold ${tierTextColor[tier]}`}>
+          <h2 className={`text-xl font-bold text-${tierColor[tier]}`}>
             ₱{revenue.toLocaleString()}
           </h2>
         </div>
@@ -74,14 +70,14 @@ const PlanCard = ({
         {visibleFeatures.map((feature, i) => (
           <span
             key={i}
-            className="bg-base-200 border border-outlineColor px-3 py-1 rounded-lg text-sm"
+            className="bg-base-200 border text-primary border-outlineColor px-3 py-1 rounded-lg text-sm"
           >
             ✓ {feature}
           </span>
         ))}
 
         {remaining > 0 && (
-          <span className="bg-base-200 border border-outlineColor px-3 py-1 rounded-lg text-sm">
+          <span className="bg-base-200 border text-primary border-outlineColor px-3 py-1 rounded-lg text-sm">
             +{remaining} more
           </span>
         )}

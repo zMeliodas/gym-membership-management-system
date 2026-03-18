@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
+@variant dark (&:is(.dark *));
+
 
 @theme {
   --color-base-300: #e7e2df;
@@ -14,10 +16,24 @@
 
   --color-buttonHover: #333333;
 
-  --color-gold: #8a6000;
+  --color-gold: #ffdc04;
   --color-silver: #aaaaaa;
 
   --font-display: "Bebas Neue", cursive;
   --font-sans: "DM Sans", sans-serif;
   --font-mono: "DM Mono", monospace;
+}
+
+.dark {
+  --color-base-300: #1b1b1d;
+  --color-base-200: #0c0c0e;
+  --color-base-100: #141416;
+
+  --color-outlineColor: #3a3a40;
+
+  --color-primary: #f0eeec;
+  --color-secondary: #e0ddd9;
+  --color-subtext: #9a9894;
+
+  --color-buttonHover: #bdbbb9;
 }

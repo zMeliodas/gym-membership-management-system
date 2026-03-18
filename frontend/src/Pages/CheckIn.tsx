@@ -16,7 +16,7 @@ const CheckIn = () => {
             MEMBER NAME OR ID
           </label>
           <input
-            className="border border-outlineColor rounded-xl py-3 px-4 w-full bg-base-300 mb-4"
+            className="border border-outlineColor rounded-xl py-3 px-4 w-full text-primary bg-base-300 mb-4"
             placeholder="Type member name..."
             type="text"
           />

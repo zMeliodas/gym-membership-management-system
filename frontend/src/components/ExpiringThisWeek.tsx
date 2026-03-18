@@ -18,11 +18,11 @@ const ExpiringThisWeek = () => {
             className="flex justify-between items-center border-b border-outlineColor pb-3"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center font-bold">
+              <div className="w-10 h-10 rounded-lg bg-black text-white/90 flex items-center justify-center font-bold">
                 {m.initials}
               </div>
 
-              <span>{m.name}</span>
+              <span className="text-primary">{m.name}</span>
             </div>
 
             <span className="text-yellow-600 font-semibold">{m.days}</span>

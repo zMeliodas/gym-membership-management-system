@@ -5,6 +5,7 @@ import SideBarButton from "./SideBarButton";
 import type { ButtonProps } from "../types/types";
 import { MdOutlineCardMembership } from "react-icons/md";
 import { FaRegCalendarCheck } from "react-icons/fa6";
+import ThemeToggle from "./ThemeToggle";
 
 const SideBar = () => {
   const buttons: ButtonProps[] = [
@@ -36,7 +37,7 @@ const SideBar = () => {
   ];
 
   return (
-    <div className="flex flex-col h-full max-w-64 w-full bg-componentBgColor outline-1 outline-outlineColor z-10">
+    <div className="flex flex-col h-full max-w-64 w-full bg-componentBgColor outline-1 outline-outlineColor z-10 justify-between">
       <div className="flex flex-col px-6 py-6 border-b border-outlineColor bg-base-100 gap-1">
         <h1 className="text-primary font-display text-4xl font-bold tracking-wider">
           GymSync
@@ -55,6 +56,11 @@ const SideBar = () => {
             link={button.link}
           />
         ))}
+      </div>
+
+      <div className="bg-base-100 flex flex-col border-t border-outlineColor p-2 gap-2 justify-between">
+        <ThemeToggle />
+        <p className="font-mono text-xs text-subtext">v1.0 · Admin</p>
       </div>
     </div>
   );
