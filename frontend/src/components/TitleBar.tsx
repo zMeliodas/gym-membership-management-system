@@ -1,3 +1,4 @@
+import { useModal } from "../context/ModalContext";
 import { usePageTitle } from "../hooks/usePageTitle";
 import Button from "./Button";
 import { FaPlus } from "react-icons/fa6";
@@ -6,6 +7,7 @@ import { useLocation } from "react-router-dom";
 const TitleBar = () => {
   const { title, subtext } = usePageTitle();
   const location = useLocation();
+  const { openAddMember } = useModal();
 
   const showButtonRoutes = ["/", "/members"];
 
@@ -21,7 +23,7 @@ const TitleBar = () => {
 
       {showButtonRoutes.includes(location.pathname) && (
         <div className="flex flex-col-reverse pt-10">
-          <Button Icon={FaPlus} title="Add Member" />
+          <Button Icon={FaPlus} title="Add Member" onClick={openAddMember} />
         </div>
       )}
     </div>

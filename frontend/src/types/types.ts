@@ -5,6 +5,7 @@ export interface ButtonProps {
   title?: string;
   link?: string;
   type?: "button" | "submit" | "reset";
+  onClick?: () => void;
 }
 
 export interface StatCardProps {
@@ -21,6 +22,37 @@ export interface PlanCardProps {
   description: string;
   features?: string[];
   featureLimit?: number;
-  onClickDetails: () => void,
+  onClickDetails: () => void;
 }
 
+export interface AddMemberModalProps {
+  onSubmit: (data: {
+    fn: string;
+    ln: string;
+    email: string;
+    phone: string;
+    plan: string;
+    startDate: string;
+    duration: string;
+  }) => void;
+}
+
+export interface ModalContextType {
+  isAddMemberOpen: boolean;
+  openAddMember: () => void;
+  closeAddMember: () => void;
+}
+
+export interface AddMemberData {
+  fn: string;
+  ln: string;
+  email: string;
+  phone: string;
+  plan: string;
+  startDate: string;
+  duration: string;
+}
+
+export interface AddMemberModalProps {
+  onSubmit: (data: AddMemberData) => void;
+}

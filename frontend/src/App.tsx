@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Members from "./Pages/Members";
 import MembershipPlans from "./Pages/MembershipPlans";
 import CheckIn from "./Pages/CheckIn";
+import AddMemberModal from "./components/modals/AddMember";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           </div>
         </div>
       </main>
+      <AddMemberModal onSubmit={(data) => console.log(data)} />
     </Router>
   );
 };
