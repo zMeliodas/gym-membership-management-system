@@ -28,8 +28,8 @@ export const usePageTitle = () => {
         };
       case "/settings":
         return {
-          title: "DASHBOARD",
-          subtext: "Saturday, February 28, 2026",
+          title: "Settings",
+          subtext: "Manage your account and preferences.",
         };
       default:
         return {

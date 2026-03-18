@@ -5,9 +5,9 @@ const MembershipPlans = () => {
   const plans: PlanCardProps[] = [
     {
       tier: "Gold",
-      price: 5000,
+      price: 3500,
       active: 3,
-      revenue: 10.5,
+      revenue: 10500,
       description:
         "Our premium all-inclusive membership for serious athletes who want the full BKL GYM experience.",
       features: [

@@ -34,7 +34,7 @@ const RecentActivity = () => {
               <span className="text-primary font-sans">{activity.text}</span>
             </div>
 
-            <span className="text-gray-400 text-sm">{activity.time}</span>
+            <span className="text-subtext text-sm">{activity.time}</span>
           </div>
         ))}
       </div>

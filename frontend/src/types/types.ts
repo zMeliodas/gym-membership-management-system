@@ -58,3 +58,8 @@ export interface AddMemberModalProps {
 }
 
 export type Theme = "light" | "dark";
+
+export interface PageMeta {
+  title: string;
+  subtext: string;
+}

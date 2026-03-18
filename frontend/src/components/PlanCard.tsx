@@ -59,7 +59,7 @@ const PlanCard = ({
 
         <div className="flex-1 bg-base-200 rounded-xl p-4">
           <p className="text-xs tracking-widest text-subtext">REVENUE</p>
-          <h2 className={`text-xl font-bold text-${tierColor[tier]}`}>
+          <h2 className={`text-xl font-bold ${tier === "Basic" && "text-primary"}`}>
             ₱{revenue.toLocaleString()}
           </h2>
         </div>
