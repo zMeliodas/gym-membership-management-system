@@ -9,6 +9,7 @@ import AddMemberModal from "./components/modals/AddMember";
 import LoginPage from "./Pages/Auth/Login";
 import Settings from "./Pages/Settings";
 import Revenue from "./Pages/Revenue";
+import EditMemberModal from "./components/modals/EditMember";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
               </div>
 
               <AddMemberModal onSubmit={(data) => console.log(data)} />
+              <EditMemberModal onSubmit={(data) => console.log(data)} />
             </main>
           }
         />

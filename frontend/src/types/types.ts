@@ -41,6 +41,11 @@ export interface ModalContextType {
   isAddMemberOpen: boolean;
   openAddMember: () => void;
   closeAddMember: () => void;
+
+  editingMember: EditMemberData | null;
+  isEditMemberOpen: boolean;
+  openEditMember: (member: EditMemberData) => void;
+  closeEditMember: () => void;
 }
 
 export interface AddMemberData {
@@ -51,6 +56,18 @@ export interface AddMemberData {
   plan: string;
   startDate: string;
   duration: string;
+}
+
+export interface EditMemberData {
+  id: number;
+  fn: string;
+  ln: string;
+  email: string;
+  phone: string;
+  plan: string;
+  status: "active" | "expired" | "frozen" | "pending";
+  expiry: string;
+  startDate: string;
 }
 
 export interface AddMemberModalProps {

@@ -1,4 +1,9 @@
+import { useModal } from "../context/ModalContext";
+import type { EditMemberData } from "../types/types";
+
 const MembersTable = () => {
+  const { openEditMember } = useModal();
+
   const members = [
     {
       name: "Marcus Reyes",
@@ -15,6 +20,30 @@ const MembersTable = () => {
       status: "active",
       expiry: "2026-03-20",
       phone: "09181234002",
+    },
+    {
+      name: "Jude Villanueva",
+      email: "jude.v@gmail.com",
+      plan: "Basic",
+      status: "expired",
+      expiry: "2026-03-12",
+      phone: "09191234003",
+    },
+    {
+      name: "Jude Villanueva",
+      email: "jude.v@gmail.com",
+      plan: "Basic",
+      status: "expired",
+      expiry: "2026-03-12",
+      phone: "09191234003",
+    },
+    {
+      name: "Jude Villanueva",
+      email: "jude.v@gmail.com",
+      plan: "Basic",
+      status: "expired",
+      expiry: "2026-03-12",
+      phone: "09191234003",
     },
     {
       name: "Jude Villanueva",
@@ -41,11 +70,11 @@ const MembersTable = () => {
     return "bg-gray-200";
   }
 
-  function planColor(plan: string) {
+  const planColor = (plan: string) => {
     if (plan === "Gold") return "text-gold bg-gold2";
     if (plan === "Silver") return "text-silver bg-silver2";
     return "bg-gray-100";
-  }
+  };
 
   return (
     <div className="border border-outlineColor rounded-xl">
@@ -78,29 +107,29 @@ const MembersTable = () => {
         </div>
 
         {/* Rows */}
-        {members.map((m, i) => (
+        {members.map((member, index) => (
           <div
-            key={i}
+            key={index}
             className="grid grid-cols-6 p-3 items-center border-t border-outlineColor"
           >
             {/* MEMBER */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-primary text-base-100 rounded-lg flex items-center justify-center">
-                {getInitials(m.name)}
+                {getInitials(member.name)}
               </div>
 
               <div>
-                <div className="text-primary">{m.name}</div>
-                <div className="text-sm text-subtext">{m.email}</div>
+                <div className="text-primary">{member.name}</div>
+                <div className="text-sm text-subtext">{member.email}</div>
               </div>
             </div>
 
             {/* PLAN */}
             <div>
               <span
-                className={`px-2 py-1 rounded text-sm font-semibold ${planColor(m.plan)}`}
+                className={`px-2 py-1 rounded text-sm font-semibold ${planColor(member.plan)}`}
               >
-                {m.plan}
+                {member.plan}
               </span>
             </div>
 
@@ -108,22 +137,39 @@ const MembersTable = () => {
             <div>
               <span
                 className={`px-2 py-1 rounded-full text-sm ${statusColor(
-                  m.status,
+                  member.status,
                 )}`}
               >
-                {m.status}
+                {member.status}
               </span>
             </div>
 
             {/* EXPIRY */}
-            <div className="font-sans text-primary">{m.expiry}</div>
+            <div className="font-sans text-primary">{member.expiry}</div>
 
             {/* PHONE */}
-            <div className="font-sans text-primary">{m.phone}</div>
+            <div className="font-sans text-primary">{member.phone}</div>
 
             {/* ACTIONS */}
             <div className="flex gap-2">
-              <button className="border px-3 py-1 rounded-xl border-outlineColor text-primary">Edit</button>
+              <button
+                className="border px-3 py-1 rounded-xl border-outlineColor text-primary cursor-pointer"
+                onClick={() =>
+                  openEditMember({
+                    id: index,
+                    fn: member.name.split(" ")[0],
+                    ln: member.name.split(" ").slice(1).join(" "),
+                    email: member.email,
+                    phone: member.phone,
+                    plan: member.plan,
+                    status: member.status as EditMemberData["status"],
+                    expiry: member.expiry,
+                    startDate: "",
+                  })
+                }
+              >
+                Edit
+              </button>
 
               <button className="border px-3 py-1 rounded-xl text-red-500">
                 Del
